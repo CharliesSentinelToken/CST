@@ -1,35 +1,160 @@
-<!-- Place this before </footer> -->
-<div style="margin-top: 2rem; text-align: center;">
-  <a href="https://app.uniswap.org/#/swap?outputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde" target="_blank" style="display: inline-block; padding: 10px 20px; background: #F57C00; color: #fff; border-radius: 6px; text-decoration: none; font-weight: bold;">
-    Trade SENTINEL on Uniswap
-  </a>
-  <br><br>
-  <button onclick="addToken()" style="padding: 10px 20px; background: #000; color: #fff; border: none; border-radius: 6px; cursor: pointer;">
-    Add SENTINEL to MetaMask
-  </button>
-</div>
-
-<script>
-  async function addToken() {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        await window.ethereum.request({
-          method: 'wallet_watchAsset',
-          params: {
-            type: 'ERC20',
-            options: {
-              address: '0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde',
-              symbol: 'SENTINEL',
-              decimals: 18,
-              image: 'logo.png'
-            },
-          },
-        });
-      } catch (err) {
-        console.log('MetaMask error:', err);
-      }
-    } else {
-      alert("MetaMask not detected. Please install MetaMask.");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlies Sentinel Token</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
     }
-  }
-</script>
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      font-weight: 400;
+    }
+    h1 .highlight {
+      font-weight: bold;
+      color: #F57C00;
+    }
+    .logo {
+      display: block;
+      margin: 1rem auto;
+      width: 180px;
+    }
+    .cta-button {
+      display: block;
+      width: fit-content;
+      max-width: 300px;
+      padding: 1rem 2rem;
+      margin: 1rem auto 2rem;
+      background: #F57C00;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+    ul {
+      margin: 1rem 0 2rem;
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    li::marker {
+      color: #F57C00;
+    }
+    footer {
+      text-align: center;
+      margin: 3rem 1rem 1.5rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    footer img {
+      width: 48px;
+      height: 48px;
+      margin: 0.5rem auto;
+    }
+    .hashtags {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>Charlies Sentinel Token</header>
+  <h1>INNOCENT VICTIMS <span class="highlight">NEVER FORGOTTEN</span></h1>
+  <img class="logo" src="logo.png" alt="CharliesSentinelToken Logo" />
+  <a class="cta-button" href="#">MAKING CHANGE</a>
+
+  <main>
+    <h2><span class="highlight">Vita ex Morte</span> — From Death Comes Life.</h2>
+    <p>CharliesSentinelToken (SENTINEL) is a deflationary Ethereum-based token created in honour of Charlie Burgoyne — an innocent child, a beloved sister and daughter, killed in a car crash by a drink driver. Her life was stolen by reckless action. Her memory was silenced by design — by a system that protects itself, not the people it was meant to serve.</p>
+    <p>SENTINEL is not a token of sympathy — it is a tool of resistance. Built on truth and driven by a mission to break the cycle of institutional betrayal.</p>
+
+    <h2>Intentions</h2>
+    <ul>
+      <li>To provide real, lasting support for surviving families: space to grieve, financial assistance, and legal help.</li>
+      <li>To allow bereaved loved ones to close the door on false representations, victimisation, and systemic abuse — and to open new paths when they choose.</li>
+      <li>To fund memorial preservation, legal battles, and justice campaigns.</li>
+      <li>To challenge and replace systems that reduce human tragedy to case files.</li>
+      <li>To create decentralised support utilities free from manipulation, delay, or performative sympathy.</li>
+      <li>To transfer value directly into truth, resistance, and victim empowerment.</li>
+    </ul>
+
+    <div style="text-align: center; font-style: italic; font-size: 1rem; color: #555; margin: 3rem 1rem 1.5rem;">
+      “Silenced by design. Child status erased. Her whisper now becomes a storm.”
+    </div>
+
+    <div style="margin-top: 3rem; text-align: center;">
+      <a href="https://app.uniswap.org/#/swap?outputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: #F57C00; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+        <img src="https://cryptologos.cc/logos/uniswap-uni-logo.png" alt="Uniswap" width="24" height="24" style="vertical-align: middle;">
+        Trade SENTINEL on Uniswap
+      </a>
+      <br><br>
+      <button onclick="addToken()" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: #000; color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        <img src="https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg" alt="MetaMask" width="22" height="22" style="vertical-align: middle;">
+        Add SENTINEL to MetaMask
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="Logo" />
+    <div>&copy; 2025 CharliesSentinelToken. All rights reserved.</div>
+    <div class="hashtags">#JusticeForCharlie #SentinelToken #VictimsRights #TokenOfTruth #CharliesSentinelToken #Sentinel</div>
+  </footer>
+
+  <script>
+    async function addToken() {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: '0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde',
+                symbol: 'SENTINEL',
+                decimals: 18,
+                image: 'logo.png'
+              },
+            },
+          });
+        } catch (err) {
+          console.log('MetaMask error:', err);
+        }
+      } else {
+        alert("MetaMask not detected. Please install MetaMask.");
+      }
+    }
+  </script>
+</body>
+</html>
