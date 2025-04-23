@@ -86,6 +86,21 @@
       margin-top: 0.5rem;
       color: #aaa;
     }
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin: 2rem 0 3rem;
+    }
+    .icon-row img {
+      width: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .icon-row img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -109,20 +124,22 @@
       <li>To transfer value directly into truth, resistance, and victim empowerment.</li>
     </ul>
 
+    <!-- Updated quote -->
     <div style="text-align: center; font-style: italic; font-size: 1rem; color: #555; margin: 3rem 1rem 1.5rem;">
       “Silenced by design. Child status erased. Her whisper now becomes a storm.”
     </div>
 
-    <div style="margin-top: 3rem; text-align: center;">
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: #F57C00; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
-        <img src="https://cryptologos.cc/logos/uniswap-uni-logo.png" alt="Uniswap" width="24" height="24" style="vertical-align: middle;">
-        Trade SENTINEL on Uniswap
+    <!-- Icon row with links -->
+    <div class="icon-row">
+      <a href="https://app.uniswap.org/#/swap?outputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde" target="_blank">
+        <img src="uniswap-transparent.png" alt="Uniswap" />
       </a>
-      <br><br>
-      <button onclick="addToken()" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: #000; color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-        <img src="https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg" alt="MetaMask" width="22" height="22" style="vertical-align: middle;">
-        Add SENTINEL to MetaMask
-      </button>
+      <a href="https://app.sushi.com/swap?outputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde" target="_blank">
+        <img src="sushiswap-transparent.png" alt="SushiSwap" />
+      </a>
+      <a href="#" onclick="addToken()">
+        <img src="metamask-transparent.png" alt="MetaMask" />
+      </a>
     </div>
   </main>
 
@@ -132,6 +149,7 @@
     <div class="hashtags">#JusticeForCharlie #SentinelToken #VictimsRights #TokenOfTruth #CharliesSentinelToken #Sentinel</div>
   </footer>
 
+  <!-- MetaMask Add Token Script -->
   <script>
     async function addToken() {
       if (typeof window.ethereum !== 'undefined') {
