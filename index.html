@@ -40,7 +40,7 @@
       max-width: 300px;
       padding: 1rem 2rem;
       margin: 1rem auto 2rem;
-      background: linear-gradient(135deg, #FFB347, #FF8C00, #FFB347);
+      background: linear-gradient(145deg, #ffcc70, #ff8c00, #ffcc70);
       color: white;
       font-weight: bold;
       font-size: 1.2rem;
@@ -48,12 +48,12 @@
       text-decoration: none;
       border-radius: 8px;
       white-space: nowrap;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2), inset 0 0 5px rgba(255,255,255,0.2);
       transition: all 0.3s ease;
     }
     .cta-button:hover {
-      background: linear-gradient(135deg, #FF8C00, #FFA500);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background: linear-gradient(145deg, #ff8c00, #ffa500, #ff8c00);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3), inset 0 0 6px rgba(255,255,255,0.3);
     }
     .styled-hr {
       border: none;
@@ -114,6 +114,12 @@
       margin-top: 0.5rem;
       color: #aaa;
     }
+    .bottom-bar {
+      background: #000;
+      height: 50px;
+      width: 100%;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -149,12 +155,6 @@
     <a href="https://metamask.io/" target="_blank">
       <img src="metamask-transparent.png" alt="MetaMask" />
     </a>
-    <!-- Optional SushiSwap -->
-    <!--
-    <a href="#" target="_blank">
-      <img src="sushiswap-transparent.png" alt="SushiSwap" />
-    </a>
-    -->
   </div>
   <hr class="styled-hr" />
   <footer>
@@ -162,5 +162,6 @@
     <div>&copy; 2025 CharliesSentinelToken. All rights reserved.</div>
     <div class="hashtags">#JusticeForCharlie #SentinelToken #VictimsRights #TokenOfTruth #CharliesSentinelToken #Sentinel</div>
   </footer>
+  <div class="bottom-bar"></div>
 </body>
 </html>
