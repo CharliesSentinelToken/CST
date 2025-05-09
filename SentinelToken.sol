@@ -1,1 +1,0 @@
-// Solidity: SENTINELToken contract code
