@@ -1,86 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SENTINEL AI Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Error</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .hidden { display: none; }
-    .pin-box input {
-      padding: 0.7rem;
-      font-size: 1.2rem;
-      width: 100px;
-      text-align: center;
-    }
-    .panel {
-      max-width: 600px;
-      width: 90%;
-      text-align: center;
-      background: #222;
-      border: 1px solid #444;
+      background-color: #01007f;
+      color: #ffffff;
+      font-family: "Courier New", Courier, monospace;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255, 165, 0, 0.2);
+      margin: 0;
     }
-    button {
-      background: orange;
-      color: black;
-      font-weight: bold;
-      padding: 0.8rem 1.4rem;
-      border: none;
-      border-radius: 6px;
+    .error-line {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 20vh;
+    }
+    .error-line span:hover::after {
+      content: "Critical issue, please reboot your device.";
+      display: block;
       margin-top: 1rem;
+      font-size: 1rem;
+      color: red;
+    }
+    .pin-box {
+      background: none;
+      border: none;
+      color: #ffffff;
+      text-align: center;
+      width: 200px;
+      font-size: 1.4rem;
+      display: block;
+      margin: 2rem auto;
+      outline: none;
+    }
+    .code-lines {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.85rem;
+      color: #00ff00;
+      line-height: 1.4rem;
+    }
+    .wipe {
+      color: red;
+      font-weight: bold;
       cursor: pointer;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="pin-box" id="pin-box">
-    <h2>Enter PIN</h2>
-    <input type="password" id="pin" placeholder="PIN" />
-    <button onclick="checkPIN()">Unlock</button>
-    <p id="error" style="color:red;"></p>
-  </div>
-
-  <div class="panel hidden" id="dashboard">
-    <h1>SENTINEL AI Token Dashboard</h1>
-    <p><strong>Token Price:</strong> $0.000X</p>
-    <p><strong>24h Volume:</strong> $XX,XXX</p>
-    <p><strong>Charity Wallet Balance:</strong> ΞX.XXXX</p>
-    <p><strong>AI Status:</strong> Idle</p>
-    <button onclick="runAI()">Run AI Adjustment</button>
-    <p id="ai-result" style="margin-top:10px;"></p>
-  </div>
-
-  <script>
-    function checkPIN() {
-      const pin = document.getElementById("pin").value;
+  <div class="code-lines">
+    0x0007F1 SYSTEM.DUMP...<br/>
+    0x0008EF BATCH_MODE=FALSE<br/>
+    0x0009AC INIT /safe.boot<br/>
+    0x0009FF WIPE= <span class="wipe" onclick="window.location.href='index.html'">WIPE ALL DATA</span><br/>
+    0x000A01 ...loader ready<br/>
+  </div>  <div class="error-line">
+    System <span>ERROR</span> has occurred.
+  </div>  <input class="pin-box" type="password" maxlength="10" oninput="checkPIN(this.value)" />  <script>
+    function checkPIN(pin) {
       if (pin === "2961") {
-        document.getElementById("pin-box").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
-      } else {
-        document.getElementById("error").textContent = "Incorrect PIN.";
+        window.location.href = "1_318.html";
       }
     }
-
-    function runAI() {
-      const result = document.getElementById("ai-result");
-      result.textContent = "AI scanning... please wait.";
-      setTimeout(() => {
-        result.textContent = "Liquidity rebalanced. Fee adjusted.";
-      }, 3000);
-    }
-  </script>
-</body>
+  </script></body>
 </html>
