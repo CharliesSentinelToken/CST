@@ -1,1 +1,0 @@
-// Solidity: ClaimNFT contract code
