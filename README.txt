@@ -1,1 +1,0 @@
-Instructions for deploying and editing the SENTINEL system.
