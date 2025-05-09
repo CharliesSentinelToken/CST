@@ -120,14 +120,24 @@
       width: 100%;
       margin: 0;
     }
+    @keyframes flash {
+      0% { box-shadow: 0 0 0px yellow; transform: scale(1); }
+      50% { box-shadow: 0 0 20px yellow; transform: scale(1.1); }
+      100% { box-shadow: 0 0 0px yellow; transform: scale(1); }
+    }
+    .flash {
+      animation: flash 0.6s ease-in-out;
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
   <header>Charlies Sentinel Token</header>
   <h1>INNOCENT VICTIMS <span class="highlight">NEVER FORGOTTEN</span></h1>
-  <img id="secretLogo" class="logo" src="logo.png" alt="CharliesSentinelToken Logo" />
+  <img class="logo" src="logo.png" alt="CharliesSentinelToken Logo" />
   <a class="cta-button" href="#">MAKING CHANGE</a>
   <hr class="styled-hr" />
+
   <main>
     <h2><span class="highlight">Vita ex Morte</span> — From Death Comes Life.</h2>
     <p>CharliesSentinelToken (SENTINEL) is a deflationary Ethereum-based token created in honour of Charlie Burgoyne — an innocent child, a beloved sister and daughter, killed in a car crash by a drink driver. Her life was stolen by reckless action. Her memory was silenced by design — by a system that protects itself, not the people it was meant to serve.</p>
@@ -148,6 +158,7 @@
     </div>
     <hr class="styled-hr" />
   </main>
+
   <div class="cta-buttons">
     <a href="https://app.uniswap.org/explore/tokens/ethereum/0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde?inputCurrency=0xb76a2cf0be7d2caf4592e9d340995d7dbab30bde&utm_source=share-tdp&utm_medium=mobile" target="_blank">
       <img src="uniswap-transparent.png" alt="Uniswap" />
@@ -156,23 +167,30 @@
       <img src="metamask-transparent.png" alt="MetaMask" />
     </a>
   </div>
+
   <hr class="styled-hr" />
   <footer>
-    <img src="logo.png" alt="Logo" />
+    <img id="secretLogo" src="logo.png" alt="Logo" />
     <div>&copy; 2025 CharliesSentinelToken. All rights reserved.</div>
     <div class="hashtags">#JusticeForCharlie #SentinelToken #VictimsRights #TokenOfTruth #CharliesSentinelToken #Sentinel</div>
   </footer>
   <div class="bottom-bar"></div>
+
   <script>
     let tapCount = 0;
     let lastTap = 0;
 
-    document.getElementById("secretLogo").addEventListener("click", () => {
+    const logo = document.getElementById("secretLogo");
+
+    logo.addEventListener("click", () => {
       const now = Date.now();
       if (now - lastTap < 1000) {
         tapCount++;
         if (tapCount >= 9) {
-          window.location.href = "a.i.html";
+          logo.classList.add("flash");
+          setTimeout(() => {
+            window.location.href = "a.i.html";
+          }, 600); // Wait for flash to finish
         }
       } else {
         tapCount = 1;
@@ -180,6 +198,5 @@
       lastTap = now;
     });
   </script>
-
 </body>
 </html>
