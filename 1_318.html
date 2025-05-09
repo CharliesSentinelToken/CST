@@ -2,18 +2,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System Error</title>
+  <title>SENTINEL AI Manager</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
-      background-color: #01007f;
-      color: #ffffff;
-      font-family: "Courier New", Courier, monospace;
-      padding: 2rem;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background: #01007f;
+      color: #ffffff;
+    }
+    .code-lines {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.85rem;
+      color: #00ff00;
+      line-height: 1.4rem;
+    }
+    .wipe {
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: underline;
     }
     .error-line {
       font-size: 1.2rem;
-      color: #ffffff;
       text-align: center;
       margin-top: 20vh;
     }
@@ -35,36 +48,59 @@
       margin: 2rem auto;
       outline: none;
     }
-    .code-lines {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      font-size: 0.85rem;
-      color: #00ff00;
-      line-height: 1.4rem;
+    .dashboard {
+      display: none;
+      background-color: #ffffff;
+      color: #000;
+      padding: 2rem;
     }
-    .wipe {
-      color: red;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: underline;
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="code-lines">
-    0x0007F1 SYSTEM.DUMP...<br/>
-    0x0008EF BATCH_MODE=FALSE<br/>
-    0x0009AC INIT /safe.boot<br/>
-    0x0009FF WIPE= <span class="wipe" onclick="window.location.href='index.html'">WIPE ALL DATA</span><br/>
-    0x000A01 ...loader ready<br/>
-  </div>  <div class="error-line">
-    System <span>ERROR</span> has occurred.
-  </div>  <input class="pin-box" type="password" maxlength="10" oninput="checkPIN(this.value)" />  <script>
+  <div id="lockscreen">
+    <div class="code-lines">
+      0x0007F1 SYSTEM.DUMP...<br />
+      0x0008EF BATCH_MODE=FALSE<br />
+      0x0009AC INIT /safe.boot<br />
+      0x0009FF WIPE= <span class="wipe" onclick="window.location.href='index.html'">WIPE ALL DATA</span><br />
+      0x000A01 ...loader ready<br />
+    </div><div class="error-line">
+  System <span>ERROR</span> has occurred.
+</div>
+
+<input class="pin-box" type="password" maxlength="10" oninput="checkPIN(this.value)" />
+
+  </div>  <div id="dashboard" class="dashboard">
+    <h1>SENTINEL AI Token Manager</h1>
+    <div class="card">
+      <p><strong>Token Price:</strong> $0.0000</p>
+      <p><strong>24h Volume:</strong> $0</p>
+      <p><strong>Charity Wallet ETH:</strong> Ξ0.0000</p>
+    </div>
+    <div class="card">
+      <p><strong>AI Status:</strong> Idle</p>
+      <button onclick="runAI()">Run AI Adjustment</button>
+    </div>
+    <div class="card">
+      <h2>Chart</h2>
+      <p>[Simulated chart placeholder]</p>
+    </div>
+  </div>  <script>
     function checkPIN(pin) {
       if (pin === "2961") {
-        window.location.href = "1_318.html";
+        document.getElementById("lockscreen").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
       }
+    }
+
+    function runAI() {
+      alert("AI market scan triggered. Pool rebalancing simulated.");
     }
   </script></body>
 </html>
