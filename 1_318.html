@@ -6,7 +6,7 @@
   <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Courier New", Courier, monospace;
       margin: 0;
       background-color: #01007f;
       color: white;
@@ -15,9 +15,9 @@
       position: absolute;
       top: 1rem;
       left: 1rem;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #00ff00;
-      line-height: 1.4rem;
+      line-height: 1.5rem;
     }
     .wipe {
       color: red;
@@ -83,8 +83,13 @@
     0x0009FF WIPE= <span class="wipe" onclick="window.location.href='index.html'">WIPE ALL DATA</span><br />
     0x000A01 ...loader ready<br />
   </div>
-  <div class="error-line">System <span>ERROR</span> has occurred.</div>
-  <input class="pin-box" type="password" maxlength="10" oninput="checkPIN(this.value)" />
+  <div class="error-line">
+    *** STOP: 0x0000001E (0xFFFFFFFF, 0x00000000, 0x00000000, 0x00000000)<br />
+    UNHANDLED EXCEPTION AT SYSTEM KERNEL CORE<br />
+    <br />
+    Enter system recovery command:
+    <input class="pin-box" type="password" maxlength="10" oninput="checkPIN(this.value)" placeholder="|" />
+  </div>
 </div><div id="dashboard" class="dashboard">
   <h1>SENTINEL AI Token Control</h1>
   <div class="panel">
