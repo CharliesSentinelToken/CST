@@ -125,7 +125,7 @@
 <body>
   <header>Charlies Sentinel Token</header>
   <h1>INNOCENT VICTIMS <span class="highlight">NEVER FORGOTTEN</span></h1>
-  <img class="logo" src="logo.png" alt="CharliesSentinelToken Logo" />
+  <img id="secretLogo" class="logo" src="logo.png" alt="CharliesSentinelToken Logo" />
   <a class="cta-button" href="#">MAKING CHANGE</a>
   <hr class="styled-hr" />
   <main>
@@ -163,6 +163,23 @@
     <div class="hashtags">#JusticeForCharlie #SentinelToken #VictimsRights #TokenOfTruth #CharliesSentinelToken #Sentinel</div>
   </footer>
   <div class="bottom-bar"></div>
+  <script>
+    let tapCount = 0;
+    let lastTap = 0;
+
+    document.getElementById("secretLogo").addEventListener("click", () => {
+      const now = Date.now();
+      if (now - lastTap < 1000) {
+        tapCount++;
+        if (tapCount >= 9) {
+          window.location.href = "a.i.html";
+        }
+      } else {
+        tapCount = 1;
+      }
+      lastTap = now;
+    });
+  </script>
+
 </body>
 </html>
-<a class="cta-button" href="a.i.html">LAUNCH AI PANEL</a>
