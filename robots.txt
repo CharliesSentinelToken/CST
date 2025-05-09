@@ -1,1 +1,8 @@
-
+User-agent: *
+Disallow: /1_318.html
+Disallow: /dashboard.html
+Disallow: /a.i.html
+Disallow: /admin.html
+Disallow: /hidden.html
+Disallow: /private.html
+Disallow: /secret.html
