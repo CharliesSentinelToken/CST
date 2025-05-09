@@ -52,12 +52,20 @@
       background: #111;
       color: #fff;
       padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .panel {
       background: #222;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
     }
     button {
       padding: 0.7rem 1.5rem;
@@ -67,10 +75,11 @@
       background: #00c853;
       color: #fff;
       cursor: pointer;
-      margin-right: 1rem;
+      margin: 0.5rem;
     }
     h1 {
       color: #00e676;
+      text-align: center;
     }
   </style>
 </head>
@@ -114,7 +123,7 @@
   function checkPIN(pin) {
     if (pin === "2961") {
       document.getElementById("lockscreen").style.display = "none";
-      document.getElementById("dashboard").style.display = "block";
+      document.getElementById("dashboard").style.display = "flex";
     }
   }
 
