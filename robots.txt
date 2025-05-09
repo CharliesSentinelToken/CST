@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /1_318.html
-Disallow: /dashboard
-Disallow: /claim
